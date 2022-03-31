@@ -1,11 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React  from 'react';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: '', lastName: ''};
   }
+
+  
+
   handleChange = event => {
     this.setState({value: event.target.value});
 
@@ -17,14 +20,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>Write Manav to see my last name!</p>
-        <input
-          type = "text"
-          name = "username"
-          value = {this.state.value}
-          onChange={this.handleChange}
-        />
-        <p>{this.state.lastName}</p>
+        <header className="App-header">
+          <p>Manav last name finder</p>
+          <input
+            type = "text"
+            name = "username"
+            value = {this.state.value}
+            onChange={this.handleChange}
+          />
+          <p>{this.state.lastName}</p>
+        </header>
       </div>
     );
   }
